@@ -1,0 +1,153 @@
+.books-container {
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.book {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+
+.book-description {
+    width: 35%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.buttons .commentBtn, .editBtn, .removeBtn {
+    color: rgb(65, 165, 255);
+    border: none;
+    background: none;
+}
+
+.circle {
+    font-size: 2.5em;
+    color: rgb(65, 135, 255);
+}
+
+.percent {
+    color: rgb(83, 83, 83);
+    font-size: 1.3em;
+}
+
+.progress-text {
+    color: rgb(131, 130, 130);
+    text-align: center;
+    margin: 0px 20px;
+}
+
+.separate__bar {
+    height: 15px;
+    width: 1px;
+    background: #ccc;
+}
+
+.book-description .type__of__book {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(142, 141, 141);
+}
+
+.book__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.author {
+    font-size: .8rem;
+    margin-bottom: 20px;
+    color: rgb(65, 165, 255);
+}
+
+.circle-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.bar {
+    width: 1px;
+    height: 70px;
+   background: #ccc;
+   align-self: center;
+}
+
+.book-chapter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    padding: 0px 50px;
+}
+
+.current__chapter {
+    color: #ccc;
+    font-size: .8rem;
+    margin-bottom: 5px;
+}
+
+.chapter__number {margin-bottom: 10px;
+}
+
+.update__progress__button {
+    width: 160px;
+    height: 30px;
+    background: rgb(65, 165, 255);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+.form__container h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__input {
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 5px;
+    padding: 5px;
+    height: 40px;
+}
+
+#book__name {
+    width: 50%;
+}
+
+#book__type {
+    width: 30%;
+}
+
+.add__book__button {
+    width: 160px;
+    height: 40px;
+    background: rgb(65, 165, 255);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
