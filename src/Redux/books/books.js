@@ -1,5 +1,3 @@
-import { clear } from "@testing-library/user-event/dist/clear";
-
 const NEW__BOOK = 'BOOKSTORE/books/NEW__BOOK';
 const ADD__BOOK = 'BOOKSTORE/books/ADD__BOOK';
 const REMOVE__BOOK = 'BOOKSTORE/books/REMOVE__BOOK';
@@ -11,7 +9,7 @@ const initialState = {
   books: [],
 };
 
-const booksReducer = (state = initialState, action = {}) => {
+const reducer__book = (state = initialState, action = {}) => {
   switch (action.type) {
     case NEW__BOOK:
     case LOAD__BOOKS:
@@ -30,4 +28,4 @@ const booksReducer = (state = initialState, action = {}) => {
       return state;
   }
 };
-export default booksReducer;
+export default reducer__book;
