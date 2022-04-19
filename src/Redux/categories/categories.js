@@ -6,7 +6,7 @@ const initialState = {
     categories: [],
 };
 
-const reducer__categories = (state = initialState, action = {}) => {
+const reducerForCategories = (state = initialState, action = {}) => {
     switch (action.type) {
         case BOOK__STATUS:
             return { ...state, status: action.payload };
@@ -14,4 +14,4 @@ const reducer__categories = (state = initialState, action = {}) => {
             return state;
     }
 };
-export default reducer__categories;
+export default reducerForCategories;

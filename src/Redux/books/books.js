@@ -9,7 +9,7 @@ const initialState = {
   books: [],
 };
 
-const reducer__book = (state = initialState, action = {}) => {
+const reducerForBook = (state = initialState, action = {}) => {
   switch (action.type) {
     case NEW__BOOK:
     case LOAD__BOOKS:
@@ -28,4 +28,4 @@ const reducer__book = (state = initialState, action = {}) => {
       return state;
   }
 };
-export default reducer__book;
+export default reducerForBook;
