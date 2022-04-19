@@ -16,7 +16,7 @@ function Books() {
           <form className="form">
             <div className="form__group">
               <input className="form__input" type="text" id="book__name" placeholder="Book title" />
-              <input className="form__input" type="list" id="book__type" placeholder="Categories" />
+              <input className="form__input" type="option" id="book__type" placeholder="Categories" />
               <button type="button" className="add__book__button">ADD BOOK</button>
             </div>
           </form>

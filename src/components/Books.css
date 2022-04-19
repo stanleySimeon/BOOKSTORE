@@ -136,6 +136,7 @@ hr {
   border-radius: 5px;
   padding: 5px;
   height: 40px;
+  outline: none;
 }
 
 #book__name {
