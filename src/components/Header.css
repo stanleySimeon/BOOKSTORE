@@ -37,12 +37,8 @@
   color: #afaeae;
 }
 
-.item:hover {
-  color: rgb(65, 135, 255);
-}
-
 .item:active {
-  color: #7e7e7e;
+  color: #232323;
 }
 
 .profile {

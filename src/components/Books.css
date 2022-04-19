@@ -1,6 +1,22 @@
-.books-container {
+.books-container{
   width: 100%;
-  padding: 20px 50px;
+  max-height: 480px;
+  padding: 20px 56px;
+  overflow-y: scroll;
+}
+
+.form__container {
+  position: relative;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0px 44px;
+}
+
+.form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .book {
@@ -31,6 +47,7 @@
   color: rgb(65, 165, 255);
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .circle {
@@ -112,6 +129,7 @@
   border: none;
   color: #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 hr {
@@ -125,12 +143,6 @@ hr {
   color: #ccc;
 }
 
-.form__group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .form__input {
   border: 1px solid rgb(235, 235, 235);
   border-radius: 5px;
@@ -140,16 +152,21 @@ hr {
 }
 
 #book__name {
-  width: 50%;
-}
-
-#book__type {
   width: 30%;
 }
 
+#book__author {
+    width: 25%;
+}
+
+#book__type {
+    width: 25%;
+}
+
 .add__book__button {
-  width: 160px;
+  width: 130px;
   height: 40px;
+  cursor: pointer;
   background: rgb(65, 165, 255);
   border: none;
   color: #fff;
