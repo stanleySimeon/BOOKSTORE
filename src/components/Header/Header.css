@@ -34,7 +34,8 @@
 
 .item {
   text-decoration: none;
-  color: #afaeae;
+  color: #383838;
+  opacity: 0.5;
 }
 
 .item:active {

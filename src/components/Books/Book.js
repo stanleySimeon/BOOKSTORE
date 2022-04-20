@@ -20,7 +20,7 @@ function Book() {
       <div className="circle-progress">
         <FontAwesomeIcon className="circle" icon={faCircleNotch} />
         <span className="progress-text">
-          <span className="percent">64%</span>
+          <span className="percent">96%</span>
           {' '}
           <br />
           {' '}
