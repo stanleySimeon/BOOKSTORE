@@ -1,4 +1,4 @@
-import { saveBook, removeBook } from '../BooksUpdate';
+import { saveBook, removeBook, BooksLoad } from '../BooksUpdate';
 
 const NEW__BOOK = 'BOOKSTORE/books/NEW__BOOK';
 const ADD__BOOK = 'BOOKSTORE/books/ADD__BOOK';
@@ -21,6 +21,14 @@ export const RemoveBook = (index, id) => (dispatch) => {
   removeBook(id).then((status) => {
     if (status === 201 || status === 200) dispatch({ type: REMOVE__BOOK, payload: index });
   });
+};
+
+export const booksLoader = () => (dispatch) => {
+  dispatch({ type: LOAD__BOOKS });
+  BooksLoad().then((books) => dispatch({
+    type: BOOKS__LOADED,
+    payload: books,
+  }));
 };
 
 const initialState = {
