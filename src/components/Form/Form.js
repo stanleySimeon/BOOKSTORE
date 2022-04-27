@@ -1,32 +1,21 @@
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { addBook } from '../../Redux/books/books';
+// import { addBook } from '../../Redux/BooksUpdate';
 import '../Books/Books.css';
 
-function Form({ id }) {
-  const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [type, setType] = useState('');
-  const categories = ['Fiction', 'Non-Fiction', 'Cooking', 'History', 'Biography', 'Poetry', 'Art',
-    'Science', 'Self-Help', 'Travel', 'Comics', 'Drama', 'Fantasy', 'Humor',
-    'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'Young Adult', 'Adventure', 'Comedy', 'Dystopia',
-    'Erotica', 'Horror', 'Paranormal', 'Philosophy', 'Psychology', 'Spirituality', 'Western',
-    'Business', 'Education', 'Finance', 'Health', 'Law', 'Medicine', 'Politics', 'Religion', 'Other'];
+function Form({
+  title, setTitle, author, setAuthor, type, setType, categories, saveBook,
+}) {
+  // const dispatch = useDispatch();
+
   return (
     <div
       className="form__container"
       onSubmit={(event) => {
         event.preventDefault();
-        if (!type.length) return;
-        const newBook = {
-          id,
-          title,
-          author,
-          type,
-        };
-        dispatch(addBook(newBook));
+        if (!type?.length) return;
+        saveBook();
         setTitle('');
         setAuthor('');
         setType('');
@@ -56,7 +45,7 @@ function Form({ id }) {
         <select
           className="form__input"
           id="book__type"
-          value={type.length ? type : 'Category'}
+          value={type?.length ? type : 'Category'}
           onChange={(event) => setType(event.target.value)}
           name="categories"
         >
@@ -67,7 +56,7 @@ function Form({ id }) {
           >
             Type of book
           </option>
-          {categories.map((category) => (
+          {categories?.map((category) => (
             <option
               key={category}
               value={category}
@@ -83,7 +72,14 @@ function Form({ id }) {
 }
 
 Form.propTypes = {
-  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  setTitle: PropTypes.func.isRequired,
+  author: PropTypes.string.isRequired,
+  setAuthor: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  setType: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  saveBook: PropTypes.func.isRequired,
 };
 
 export default Form;
