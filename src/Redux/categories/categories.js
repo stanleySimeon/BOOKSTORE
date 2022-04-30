@@ -1,17 +1,16 @@
-const BOOK__STATUS = 'BOOK__STATUS';
+const STATUS__CHECKER = 'STATUS__CHECKER';
 
-export const checkStatus = (status) => ({ type: BOOK__STATUS, payload: status });
+export const statusChecker = () => ({
+  type: STATUS__CHECKER,
+});
 
-const initialState = {
-  categories: [],
-};
-
-const reducerForCategories = (state = initialState, action = {}) => {
-  switch (action.type) {
-    case BOOK__STATUS:
-      return { ...state, status: action.payload };
+const categoriesReducer = (state = [], actions) => {
+  switch (actions.type) {
+    case STATUS__CHECKER:
+      return 'Under construction';
     default:
       return state;
   }
 };
-export default reducerForCategories;
+
+export default categoriesReducer;

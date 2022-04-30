@@ -1,85 +1,58 @@
-// import { useDispatch } from 'react-redux';
-// import { useState } from 'react';
-import PropTypes from 'prop-types';
-// import { addBook } from '../../Redux/BooksUpdate';
+import React from 'react';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { addBooks } from '../../Redux/books/book';
 import '../Books/Books.css';
 
-function Form({
-  title, setTitle, author, setAuthor, type, setType, categories, saveBook,
-}) {
-  // const dispatch = useDispatch();
+const Form = () => {
+  const dispatch = useDispatch();
+  const bookList = useSelector((state) => state.book, shallowEqual);
+
+  const categories = ['Fiction', 'Non-Fiction', 'Cooking', 'History', 'Biography', 'Poetry', 'Art',
+    'Science', 'Self-Help', 'Travel', 'Comics', 'Drama', 'Fantasy', 'Humor',
+    'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'Young Adult', 'Adventure', 'Comedy', 'Dystopia',
+    'Erotica', 'Horror', 'Paranormal', 'Philosophy', 'Psychology', 'Spirituality', 'Western',
+    'Business', 'Education', 'Finance', 'Health', 'Law', 'Medicine', 'Politics', 'Religion', 'Other'];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const authorE = e.target.elements.author;
+    const categoryE = e.target.elements.category;
+    const bookE = e.target.elements.bookTitle;
+
+    let ID;
+    try {
+      ID = parseInt(bookList[bookList.length - 1].id, 10) + 1;
+    } catch (e) {
+      ID = 0;
+    }
+
+    dispatch(addBooks({
+      id: ID, category: categoryE.value, bookTitle: bookE.value, author: authorE.value,
+    }));
+  };
 
   return (
-    <div
-      className="form__container"
-      onSubmit={(event) => {
-        event.preventDefault();
-        if (!type?.length) return;
-        saveBook();
-        setTitle('');
-        setAuthor('');
-        setType('');
-      }}
-    >
+    <div className="form__container">
       <hr />
       <h2>ADD NEW BOOK</h2>
-      <form className="form">
-        <input
-          className="form__input"
-          type="text"
-          id="book__name"
-          placeholder="Book title"
-          onChange={(event) => setTitle(event.target.value)}
-          value={title}
-          required
-        />
-        <input
-          className="form__input"
-          type="text"
-          id="book__author"
-          placeholder="Author"
-          onChange={(event) => setAuthor(event.target.value)}
-          value={author}
-          required
-        />
-        <select
-          className="form__input"
-          id="book__type"
-          value={type?.length ? type : 'Category'}
-          onChange={(event) => setType(event.target.value)}
-          name="categories"
-        >
-          <option
-            className="selected__book"
-            value="Category"
-            disabled
-          >
-            Type of book
-          </option>
-          {categories?.map((category) => (
-            <option
-              key={category}
-              value={category}
-            >
+      <form className="form" onSubmit={handleSubmit}>
+        <input className="form__input" type="text" id="book__name" name="bookTitle" placeholder="Book title" required />
+        <input className="form__input" type="text" id="book__author" name="author" placeholder="Author" required />
+        <select className="form__input" id="book__type" name="category">
+          <option className="selected__book" value="Category" disabled>Type of book</option>
+          {' '}
+          {
+          categories.map((category) => (
+            <option key={category} value={category}>
               {category}
             </option>
-          ))}
+          ))
+          }
         </select>
         <button type="submit" className="add__book__button">ADD BOOK</button>
       </form>
     </div>
   );
-}
-
-Form.propTypes = {
-  title: PropTypes.string.isRequired,
-  setTitle: PropTypes.func.isRequired,
-  author: PropTypes.string.isRequired,
-  setAuthor: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired,
-  setType: PropTypes.func.isRequired,
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-  saveBook: PropTypes.func.isRequired,
 };
 
 export default Form;
