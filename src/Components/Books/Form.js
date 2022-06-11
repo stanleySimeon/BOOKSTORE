@@ -3,7 +3,7 @@ import './Form.css';
 
 function Form() {
   return (
-    <div className="form">
+    <form className="form">
       <div className="form__title">
         <h2>Add a book</h2>
       </div>
@@ -16,7 +16,7 @@ function Form() {
       <div className="form__input">
         <input type="submit" className="add__book" />
       </div>
-    </div>
+    </form>
   );
 }
 export default Form;
