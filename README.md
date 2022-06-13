@@ -26,17 +26,11 @@ Redux
 
 To get a local copy up and running follow these simple example steps.
 
-# Prerequisites
-
-# Setup
-
 # Install
-
-# Usage
+`git clone`https://github.com/stanleySimeon/bookstore.git
 
 # Deployment
-
-## Authors
+Go to your terminal and type `npm start` to start the project
 
 👤 **Author1**
 
