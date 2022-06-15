@@ -1,14 +1,13 @@
 import React from 'react';
 import Header from '../Navigation/Header';
 import Book from './Book';
-import './Books.css';
+import AllBook from './AllBook';
 
-function Books() {
-  return (
-    <div className="books">
-      <Header />
-      <Book />
-    </div>
-  );
-}
+const Books = () => (
+  <div>
+    <Header />
+    <Book />
+    <AllBook />
+  </div>
+);
 export default Books;

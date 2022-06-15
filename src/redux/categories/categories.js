@@ -1,17 +1,17 @@
+// Define a constant for the action types
 const STATUS_CHECKER = 'STATUS_CHECKER';
 
-const currentState = [];
-
-const categoriesReducer = (state = currentState, actions) => {
-  switch (actions.type) {
+// Reducer for the status checker
+export default function categoriesReducer(state = [], action) {
+  switch (action.type) {
     case STATUS_CHECKER:
-      return 'Under Construction';
+      return 'Under construction';
     default:
       return state;
   }
-};
-export default categoriesReducer;
+}
 
+// Actions creators
 export function statusChecker() {
   return {
     type: STATUS_CHECKER,
