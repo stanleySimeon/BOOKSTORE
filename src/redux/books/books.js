@@ -14,7 +14,7 @@ export const initialState = [
   {
     id: uuidv4(),
     title: 'The Hobbit',
-    author: 'J.R.R. Tolkien',
+    author: 'James H. Tolkien',
   },
 ];
 
