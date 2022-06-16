@@ -7,6 +7,7 @@ const AllBook = () => {
   const booksList = books.map((book) => (
     <li key={book.id}>
       <span>{book.title}</span>
+      {' '}
       <span>{book.author}</span>
       <button type="button" onClick={() => dispatch(removeBook(book))}>
         Remove
