@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import AddBook from './AllBook';
+import Header from '../Navigation/Header';
 import { getBooks } from '../../redux/books/books';
 
 export default function Books() {
@@ -12,6 +13,7 @@ export default function Books() {
   }, []);
   return (
     <>
+      <Header />
       {books.map((book) => (
         <Book key={book.item_id} book={book} />
       ))}
