@@ -1,79 +1,21 @@
-/* eslint-disable camelcase */
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Header from '../Navigation/Header';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import AddBook from './AllBook';
-import { fetchBooks, removeBook } from '../../redux/books/books';
+import { getBooks } from '../../redux/books/books';
 
-// const booksList = () => {
-//   const booksList = useSelector((state) => state.books);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(fetchBooks());
-//   }, []);
-
-//   return (
-//     <div className="container">
-//       <div id="book_Container">
-//         <Header />
-//         <ul id="book_list">
-//           {booksList.map((book) => (
-//             <Book
-//               item_id={book.item_id}
-//               key={book.id}
-//               bookName={book.title}
-//               authorName={book.author}
-//               category={book.category}
-//               progress={book.progress}
-//               removeBook={removeBook}
-//             />
-//           ))}
-//         </ul>
-//         <hr />
-//         <div id="add_book">
-//           <h2>ADD NEW BOOK</h2>
-//           <AddBook />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-// export default booksList;
-
-const booksList = () => {
-  const booksList = useSelector((state) => state.books);
+export default function Books() {
+  const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(fetchBooks());
+    dispatch(getBooks());
   }, []);
-
   return (
-    <div className="container">
-      <div id="book_Container">
-        <Header />
-        <ul id="book_list">
-          {booksList.map((book) => (
-            <Book
-              item_id={book.item_id}
-              key={book.id}
-              bookName={book.title}
-              authorName={book.author}
-              category={book.category}
-              progress={book.progress}
-              removeBook={removeBook}
-            />
-          ))}
-        </ul>
-        <hr />
-        <div id="add_book">
-          <h2>ADD NEW BOOK</h2>
-          <AddBook />
-        </div>
-      </div>
-    </div>
+    <>
+      {books.map((book) => (
+        <Book key={book.item_id} book={book} />
+      ))}
+      <AddBook />
+    </>
   );
-};
-export default booksList;
+}

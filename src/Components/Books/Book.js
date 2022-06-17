@@ -1,44 +1,54 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unused-prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
+import Proptypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/books';
+import { del } from '../../redux/books/books';
 
-const Book = ({
-  category,
-  bookName,
-  authorName,
-}) => (
-  <li className="book">
-    <div className="book-description">
-      <span className="category">{category}</span>
-      <h3 className="book-name">{bookName}</h3>
-      <span className="author-name">{authorName}</span>
-      <div className="book-buttons">
-        <button type="button">Comments</button>
-        <div className="vr" />
-        <button type="button" onClick={removeBook}>Remove</button>
-        <div className="vr" />
-        <button type="button">Edit</button>
+export default function Book({ book }) {
+  const dispatch = useDispatch();
+  const removeBook = (event, bookId) => {
+    event.preventDefault();
+    dispatch(del(bookId));
+  };
+
+  return (
+    <div className="bookCard" id={book.id}>
+      <div className="bookDetails">
+        <p className="genre">{book.category}</p>
+        <p className="title">{book.title}</p>
+        <p className="author">{book.author}</p>
+        <ul className="bookButtons">
+          <li><button className="bookButton" type="button">Comments</button></li>
+          <li><button className="rmv" type="button" onClick={(event) => removeBook(event, book.item_id)}>Remove</button></li>
+          <li><button className="bookButton" type="button">Edit</button></li>
+        </ul>
+      </div>
+      <div className="progress">
+        <div className="chart">
+          <div className="ProgressBar">
+            <div className="circle-wrap">
+              <div className="circle">
+                <div className="mask half">
+                  <div className="fill" />
+                </div>
+                <div className="inside-circle" />
+              </div>
+            </div>
+          </div>
+          <div className="percentage">
+            <h2>64%</h2>
+            <p className="status">Completed</p>
+          </div>
+        </div>
+        <div className="rightSection">
+          <p className="status">currentChapter</p>
+          <p>chapterNumber</p>
+          <button className="buttonProgress" type="button">Update progress</button>
+        </div>
       </div>
     </div>
-  </li>
-);
+  );
+}
 
 Book.propTypes = {
-  category: PropTypes.string.isRequired,
-  bookName: PropTypes.string.isRequired,
-  authorName: PropTypes.string.isRequired,
-  progress: PropTypes.number,
-  currentChapter: PropTypes.number,
-  chapterName: PropTypes.string,
+  book: Proptypes.objectOf(Proptypes.string).isRequired,
 };
-
-Book.defaultProps = {
-  currentChapter: null,
-  chapterName: null,
-  progress: null,
-};
-
-export default Book;

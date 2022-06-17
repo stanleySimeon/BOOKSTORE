@@ -2,7 +2,7 @@
 
 # BOOKSTORE
 
-> Bookstore is a web app that allow user to add a book to a reading list and have functionalities to remove book, and show user reading progress. I made this project to test my React and Redux skills... 
+> Bookstore is a web app that allow user to addBook a book to a reading list and have functionalities to remove book, and show user reading progress. I made this project to test my React and Redux skills... 
 
 ## Built With
 
