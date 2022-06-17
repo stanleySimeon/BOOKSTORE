@@ -16,6 +16,9 @@ export default function AddBook() {
       title,
       author,
       category,
+      progress: 0,
+      currentChapter: 0,
+      chapterName: '',
     };
     dispatch(addBook(book));
   };
@@ -40,7 +43,7 @@ export default function AddBook() {
         <input type="text" name="title" value={title} onChange={handleChange} />
         <input type="text" name="author" value={author} onChange={handleChange} />
         <input type="text" name="category" value={category} onChange={handleChange} />
-        <button type="submit">Add Book</button>
+        <button type="submit" onClick={() => dispatch(handleSubmit(addBook()))}>Add Book</button>
       </form>
     </div>
   );
