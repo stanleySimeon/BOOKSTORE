@@ -1,3 +1,122 @@
-* {
-  margin: 0;
+.bookCard {
+  width: 90%;
+  height: 10.625rem;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #f0ecec;
+  margin-bottom: 10px;
+}
+
+.bookCard .book_container_left {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.category {
+  font-size: 1.2rem;
+  color: #868686;
+}
+
+.book_container_left p.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 5px 0 3px 0;
+}
+
+.author {
+  font-family: 'Times New Roman', Times, serif;
+  color: #0290ff;
+}
+
+.book_container_left .btn_left_container {
+  width: 40%;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book_container_left .btn_left_container .bar {
+  width: 1px;
+  height: 15px;
+  background-color: #e2e2e2;
+}
+
+.book_container_left .btn_left_container .btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #0290ff;
+  cursor: pointer;
+}
+
+.progress_container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progressBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 160px;
+  height: 100px;
+  gap: 10px;
+}
+
+.show_percent .percent {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.complete {
+  color: #868686;
+}
+
+.progress_container .separator_right {
+  width: 1px;
+  height: 60px;
+  background-color: #e2e2e2;
+}
+
+.right_container {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right_container .status {
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: #868686;
+}
+
+.chapter_number {
+  font-size: 0.9rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 5px;
+}
+
+.update_progress_btn {
+  width: 11.5rem;
+  height: 2.063rem;
+  margin: 20px 0;
+  border-radius: 2px;
+  background: #0290ff;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }

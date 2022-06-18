@@ -1,45 +1,62 @@
-// Actions types
-import { v4 as uuidv4 } from 'uuid';
+const API = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tli4IjMEVydK5jkQkZDP/books';
+const ADD = 'add';
+const DEL = 'del';
+const UPDATE = 'getBooks';
 
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+const initialState = [];
 
-// Define an initial state
-export const initialState = [
-  {
-    id: uuidv4(),
-    title: 'The Lord of the Rings',
-    author: 'J.R.R. Tolkien',
-  },
-  {
-    id: uuidv4(),
-    title: 'The Hobbit',
-    author: 'James H. Tolkien',
-  },
-];
+// Actions
 
-// Books reducer
-export default function bookReducer(state = initialState, { type, book }) {
-  switch (type) {
-    case ADD_BOOK:
-      return [...state, book];
-    case REMOVE_BOOK:
-      return (state.filter(({ id }) => id !== book.id));
+export const add = (book) => async (dispatch) => {
+  await fetch(API, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(book),
+  })
+    .then((response) => response.text())
+    .then(
+      () => dispatch({ type: ADD, payload: book }),
+      () => dispatch({ type: ADD, payload: null }),
+    );
+};
+export const del = (bookId) => async (dispatch) => {
+  await fetch(`${API}/${bookId}`, {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ item_id: bookId }),
+  })
+    .then((response) => response.text())
+    .then(
+      () => dispatch({ type: DEL, payload: bookId }),
+      () => dispatch({ type: DEL, payload: null }),
+    );
+};
+export const getBooks = () => async (dispatch) => {
+  await fetch(API)
+    .then((books) => books.json())
+    .then(
+      (data) => dispatch({ type: UPDATE, payload: data }),
+      () => dispatch({ type: UPDATE, payload: [] }),
+    );
+};
+// Reducer
+const booksReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD:
+      return [...state, action.payload];
+    case DEL:
+      return state.filter((book) => book.item_id !== action.payload);
+    case UPDATE: {
+      const bookList = [];
+      Object.keys(action.payload).forEach((key) => {
+        const book = action.payload[key][0];
+        book.item_id = key;
+        bookList.push(book);
+      });
+      return bookList;
+    }
     default:
       return state;
   }
-}
-// Actions creators
-export function addBook(book) {
-  return {
-    type: ADD_BOOK,
-    book,
-  };
-}
-
-export function removeBook(book) {
-  return {
-    type: REMOVE_BOOK,
-    book,
-  };
-}
+};
+export default booksReducer;
