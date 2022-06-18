@@ -13,7 +13,7 @@ export default function Book({ book }) {
     event.preventDefault();
     dispatch(del(bookId));
   };
-  const percentage = 12;
+  const percentage = 64;
   return (
     <div className="bookCard" id={book.id}>
       <div className="book_container_left">
@@ -38,7 +38,6 @@ export default function Book({ book }) {
               strokeWidth: 1,
               root: {},
               path: {
-                stroke: `rgba(62, 152, 199, ${percentage / 100})`,
                 strokeLinecap: 'butt',
                 transition: 'stroke-dashoffset 0.5s ease 0s',
                 transform: 'rotate(0.25turn)',
@@ -51,12 +50,8 @@ export default function Book({ book }) {
                 transform: 'rotate(0.25turn)',
                 transformOrigin: 'center center',
               },
-              text: {
-                fill: '#100',
-                fontSize: '16px',
-              },
               background: {
-                fill: '#0290ff',
+                color: '#1B0969',
               },
             }}
           />
