@@ -68,7 +68,7 @@ export default function Book({ book }) {
         <span className="separator_right"></span>
         <div className="right_container">
           <p className="status current">CURRENT CHAPTER</p>
-          <p>Chapter 1</p>
+          <p className="chapter_number">Chapter 1</p>
           <button className="update_progress_btn btn" type="button">UPDATE PROGRESS</button>
         </div>
       </div>

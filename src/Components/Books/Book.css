@@ -4,7 +4,7 @@
   padding: 20px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   background-color: rgb(255, 255, 255);
   border: 1px solid #f0ecec;
@@ -12,7 +12,7 @@
 }
 
 .bookCard .book_container_left {
-  width: 40%;
+  width: 45%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@
 }
 
 .progress_container {
-  width: 55%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -81,4 +81,41 @@
 
 .complete {
   color: #868686;
+}
+
+.progress_container .separator_right {
+  width: 1px;
+  height: 60px;
+  background-color: #e2e2e2;
+}
+
+.right_container {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right_container .status {
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: #868686;
+}
+
+.chapter_number {
+  font-size: 0.9rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 5px;
+}
+
+.update_progress_btn {
+  width: 11.5rem;
+  height: 2.063rem;
+  margin: 20px 0;
+  border-radius: 2px;
+  background: #0290ff;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
