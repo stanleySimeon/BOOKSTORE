@@ -1,0 +1,62 @@
+body {
+  background-color: #f5f6f7;
+}
+
+.form_container {
+  width: 90%;
+  margin: auto;
+}
+
+.separator_line {
+  margin-top: 20px;
+  color: #f2efef;
+}
+
+.form_container h2 {
+  margin: 40px 0 20px 0;
+  font-size: 2rem;
+  color: #828282;
+}
+
+.form {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form .bookTitle {
+  width: 30%;
+  margin: 0;
+}
+
+.authorName {
+  width: 30%;
+}
+
+.selectOption {
+  width: 23%;
+  color: #868686;
+}
+
+.addBtn {
+  width: 12%;
+  background-color: #0290ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form .bookTitle,
+.authorName,
+.selectOption,
+.addBtn {
+  outline: none;
+  border: 1px solid #e1e0e0;
+  padding: 10px;
+  height: 50px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
