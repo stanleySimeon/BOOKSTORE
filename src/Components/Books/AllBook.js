@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { add } from '../../redux/books/books';
+import { addBook } from '../../redux/books/books';
 import './AllBook.css';
 
 export default function AddBook() {
@@ -18,7 +18,7 @@ export default function AddBook() {
       title,
       author,
     };
-    dispatch(add(newBook));
+    dispatch(addBook(newBook));
   }
 
   const handler = (event) => {

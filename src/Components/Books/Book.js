@@ -4,14 +4,14 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Proptypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { del } from '../../redux/books/books';
+import { removeBook } from '../../redux/books/books';
 import './Book.css';
 
 export default function Book({ book }) {
   const dispatch = useDispatch();
-  const removeBook = (event, bookId) => {
+  const rmBook = (event, bookId) => {
     event.preventDefault();
-    dispatch(del(bookId));
+    dispatch(removeBook(bookId));
   };
 
   const [progress, setProgress] = useState(25);
@@ -38,7 +38,7 @@ export default function Book({ book }) {
         <ul className="btn_left_container">
           <li><button className="btn comment" type="button">Comments</button></li>
           <span className="bar"></span>
-          <li><button className="btn remove" type="button" onClick={(event) => removeBook(event, book.item_id)}>Remove</button></li>
+          <li><button className="btn remove" type="button" onClick={(event) => rmBook(event, book.item_id)}>Remove</button></li>
           <span className="bar"></span>
           <li><button className="btn add" type="button">Edit</button></li>
         </ul>
