@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const API = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tli4IjMEVydK5jkQkZDP/books';
 const ADD = 'add';
 const DEL = 'del';
@@ -39,6 +40,7 @@ export const getBooks = () => async (dispatch) => {
       () => dispatch({ type: UPDATE, payload: [] }),
     );
 };
+
 // Reducer
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {

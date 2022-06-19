@@ -1,5 +1,5 @@
 /* eslint-disable react/self-closing-comp */
-import React from 'react';
+import React, { useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Proptypes from 'prop-types';
@@ -13,7 +13,20 @@ export default function Book({ book }) {
     event.preventDefault();
     dispatch(del(bookId));
   };
-  const percentage = 64;
+
+  const [progress, setProgress] = useState(25);
+
+  const handleProgress = (event) => {
+    event.preventDefault();
+    setProgress(event.target.value);
+
+    if (progress === 100) {
+      setProgress(0);
+    } else {
+      setProgress(progress + 5);
+    }
+  };
+
   return (
     <div className="bookCard" id={book.id}>
       <div className="book_container_left">
@@ -33,7 +46,7 @@ export default function Book({ book }) {
       <div className="progress_container">
         <div className="progressBar">
           <CircularProgressbar
-            value={percentage}
+            value={progress}
             styles={{
               strokeWidth: 1,
               root: {},
@@ -56,7 +69,7 @@ export default function Book({ book }) {
             }}
           />
           <div className="show_percent">
-            <span className="percent">{`${percentage}%`}</span>
+            <span className="percent">{`${progress}%`}</span>
             <p className="status complete">Completed</p>
           </div>
         </div>
@@ -64,7 +77,7 @@ export default function Book({ book }) {
         <div className="right_container">
           <p className="status current">CURRENT CHAPTER</p>
           <p className="chapter_number">Chapter 1</p>
-          <button className="update_progress_btn btn" type="button">UPDATE PROGRESS</button>
+          <button className="update_progress_btn btn" type="button" onClick={(event) => handleProgress(event, book.item_id)}>UPDATE PROGRESS</button>
         </div>
       </div>
     </div>

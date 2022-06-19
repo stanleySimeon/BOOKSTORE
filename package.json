@@ -7,11 +7,14 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@material-ui/styles": "^4.11.5",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^13.5.0",
+    "add": "^2.0.6",
     "axios": "^0.26.1",
+    "or": "^0.2.0",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-circular-progressbar": "^2.0.4",
@@ -25,7 +28,8 @@
     "redux-thunk": "^2.4.1",
     "thunk": "^0.0.1",
     "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
