@@ -14,8 +14,8 @@ export default function Book({ book }) {
     dispatch(removeBook(bookId));
   };
 
-  const [progress, setProgress] = useState(1);
-  const [chapter, setChapter] = useState(1);
+  const [progress, setProgress] = useState(0);
+  const [chapter, setChapter] = useState(0);
 
   const handleProgress = (event) => {
     event.preventDefault();
@@ -26,7 +26,7 @@ export default function Book({ book }) {
       setProgress(1);
       setChapter(1);
     } else {
-      setProgress(progress + 1);
+      setProgress(progress + 5);
       setChapter(chapter + 1);
     }
   };
