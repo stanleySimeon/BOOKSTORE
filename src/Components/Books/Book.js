@@ -14,16 +14,20 @@ export default function Book({ book }) {
     dispatch(removeBook(bookId));
   };
 
-  const [progress, setProgress] = useState(25);
+  const [progress, setProgress] = useState(1);
+  const [chapter, setChapter] = useState(1);
 
   const handleProgress = (event) => {
     event.preventDefault();
     setProgress(event.target.value);
+    setChapter(event.target.value);
 
     if (progress === 100) {
-      setProgress(0);
+      setProgress(1);
+      setChapter(1);
     } else {
-      setProgress(progress + 5);
+      setProgress(progress + 1);
+      setChapter(chapter + 1);
     }
   };
 
@@ -53,18 +57,12 @@ export default function Book({ book }) {
               path: {
                 strokeLinecap: 'butt',
                 transition: 'stroke-dashoffset 0.5s ease 0s',
-                transform: 'rotate(0.25turn)',
                 transformOrigin: 'center center',
               },
               trail: {
-                stroke: '#EDEDED',
-                backgroundColor: '#2F4EE8',
                 strokeLinecap: 'butt',
                 transform: 'rotate(0.25turn)',
                 transformOrigin: 'center center',
-              },
-              background: {
-                color: '#1B0969',
               },
             }}
           />
@@ -76,7 +74,11 @@ export default function Book({ book }) {
         <span className="separator_right"></span>
         <div className="right_container">
           <p className="status current">CURRENT CHAPTER</p>
-          <p className="chapter_number">Chapter 1</p>
+          <p className="chapter_number">
+            Chapter
+            {' '}
+            { chapter }
+          </p>
           <button className="update_progress_btn btn" type="button" onClick={(event) => handleProgress(event, book.item_id)}>UPDATE PROGRESS</button>
         </div>
       </div>
