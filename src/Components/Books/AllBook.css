@@ -3,7 +3,8 @@ body {
 }
 
 .form_container {
-  width: 90%;
+  width: 92%;
+  padding-right: 15px;
   margin: auto;
 }
 
@@ -24,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0;
   border-radius: 5px;
 }
 
