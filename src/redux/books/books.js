@@ -20,15 +20,15 @@ export const addBook = (book) => async (dispatch) => {
       () => dispatch({ type: ADD_BOOK, payload: null }),
     );
 };
-export const removeBook = (bookId) => async (dispatch) => {
-  await fetch(`${getUrl}/${bookId}`, {
+export const removeBook = (id) => async (dispatch) => {
+  await fetch(`${getUrl}/${id}`, {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ item_id: bookId }),
+    body: JSON.stringify({ item_id: id }),
   })
     .then((response) => response.text())
     .then(
-      () => dispatch({ type: REMOVE_BOOK, payload: bookId }),
+      () => dispatch({ type: REMOVE_BOOK, payload: id }),
       () => dispatch({ type: REMOVE_BOOK, payload: null }),
     );
 };
