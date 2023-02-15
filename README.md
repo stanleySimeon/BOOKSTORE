@@ -32,7 +32,7 @@
 
 # 📖 BOOKSTORE <a name="about-project"></a>
 
-**[BOOKSTORE](https://bstore.netlify.app/)** is a portfolio website for EJS Brand. It is a single page application built with React.js and Tailwind CSS.
+**[BOOKSTORE](https://bstore.netlify.app/)** Bookstore is a web app that allow user to add a book to a reading list and have functionalities to remove book, and show user reading progress.
 
 ## 🛠 Built With <a name="built-with"></a>
 
