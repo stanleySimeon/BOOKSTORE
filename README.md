@@ -1,65 +1,154 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# BOOKSTORE
+<a name="readme-top"></a>
 
-> Bookstore is a web app that allow user to add a book to a reading list and have functionalities to remove book, and show user reading progress. I made this project to test my React and Redux skills... 
+<div align="center">
+  <h3><b>BOOKSTORE</b></h3>
+</div>
 
-## Built With
+<!-- TABLE OF CONTENTS -->
 
-Node.js
-React
-React-DOM
-React-Create-App
-npm
-CSS
-ES6
-Webpack
-prop-types
-Redux
+# 📗 Table of Contents
 
-## Live Demo (if available)
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ](#faq)
+- [📝 License](#license)
 
-[Live Demo Link](https://livedemo.com)
+<!-- PROJECT DESCRIPTION -->
 
+# 📖 BOOKSTORE <a name="about-project"></a>
 
-# Getting Started
+**[BOOKSTORE](https://bstore.netlify.app/)** Bookstore is a web app that allow user to add a book to a reading list and have functionalities to remove book, and show user reading progress.
 
-To get a local copy up and running follow these simple example steps.
+## 🛠 Built With <a name="built-with"></a>
 
-# Prerequisites
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Redux](https://redux.js.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-# Setup
+### Tech Stack <a name="tech-stack"></a>
 
-# Install
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+  </ul>
+</details>
 
-# Usage
+<!-- LIVE DEMO -->
 
-# Deployment
+## 🚀 Live Demo <a name="live-demo"></a>
 
-## Authors
+- [Live Demo Link](https://bstore.netlify.app/)
 
-👤 **Author1**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+<!-- GETTING STARTED -->
 
-👤 **Author2**
+## 💻 Getting Started <a name="getting-started"></a>
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+To get a local copy up and running, follow these steps.
 
-## 🤝 Contributing
+### Prerequisites
+
+In order to run this project you need:
+
+```sh
+ npm
+```
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  cd your_folder_name (where you want to clone the project)
+  git clone https://github.com/stanleySimeon/BOOKSTORE.git
+```
+
+### Install
+
+Install this project with:
+
+```sh
+  cd BOOKSTORE
+  npm install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  npm start
+```
+
+### Deployment
+
+You can deploy this project using:
+
+  ```sh
+    npm run build
+  ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Author**
+
+- GitHub: [@stanleySimeon](https://github.com/stanleySimeon)
+- Twitter: [@mstanleyme](https://twitter.com/mstanleyme)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/stanleysimeon)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Give a ⭐️ if you like this project!
+<!-- SUPPORT -->
 
-## 📝 License
+## ⭐️ Show your support <a name="support"></a>
 
-This project is [MIT](./MIT.md) licensed.
+If you like this project, please give it a ⭐️!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
