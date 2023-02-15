@@ -2,6 +2,7 @@
 const getUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tli4IjMEVydK5jkQkZDP/books';
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
+const EDIT_BOOK = 'EDIT_BOOK';
 const FETCHED_BOOK = 'FETCHED_BOOK';
 
 const initialState = [];
@@ -32,6 +33,20 @@ export const removeBook = (id) => async (dispatch) => {
       () => dispatch({ type: REMOVE_BOOK, payload: null }),
     );
 };
+
+export const editBook = (book) => async (dispatch) => {
+  await fetch(`${getUrl}/${book.item_id}`, {
+    method: 'PUT',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(book),
+  })
+    .then((response) => response.text())
+    .then(
+      () => dispatch({ type: EDIT_BOOK, payload: book }),
+      () => dispatch({ type: EDIT_BOOK, payload: null }),
+    );
+};
+
 export const getBooks = () => async (dispatch) => {
   await fetch(getUrl)
     .then((books) => books.json())
@@ -48,6 +63,10 @@ const booksReducer = (state = initialState, action) => {
       return [...state, action.payload];
     case REMOVE_BOOK:
       return state.filter((book) => book.item_id !== action.payload);
+    case EDIT_BOOK: {
+      const bookList = state.filter((book) => book.item_id !== action.payload.item_id);
+      return [...bookList, action.payload];
+    }
     case FETCHED_BOOK: {
       const bookList = [];
       Object.keys(action.payload).forEach((key) => {
