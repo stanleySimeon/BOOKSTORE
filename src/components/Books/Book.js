@@ -5,7 +5,7 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import './Books.css';
 
 const Book = ({
-  category, title: bookTitle, author, RemoveBook, progress,
+  category, title: bookTitle, author, RemoveBook, progress, editBook,
 }) => {
   (
     <div className="book">
@@ -20,7 +20,9 @@ const Book = ({
             Remove
           </button>
           <span className="separate__bar" />
-          <button type="button" className="editBtn">Edit</button>
+          <button type="button" className="editBtn" onClick={editBook}>
+            Edit
+          </button>
         </span>
       </div>
       <div className="circle-progress">

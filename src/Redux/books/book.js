@@ -1,6 +1,7 @@
 // Action types
 const ADD__BOOK = 'ADD__BOOK';
 const REMOVE__BOOK = 'bookstore/books/REMOVE__BOOK';
+const EDIT__BOOK = 'bookstore/books/EDIT__BOOK';
 const FETCHED__DATA = 'FETCHED__DATA';
 
 // Reducer
@@ -27,6 +28,19 @@ const booksReducer = (state = initialState, action) => {
       return [
         ...state.filter((book) => book.item_id !== action.book.item_id),
       ];
+    case EDIT__BOOK:
+      return [
+        ...state.map((book) => {
+          if (book.item_id === action.book.item_id) {
+            return {
+              ...book,
+              title: action.book.title,
+              category: action.book.category,
+            };
+          }
+          return book;
+        }),
+      ];
     default: return state;
   }
 };
@@ -35,6 +49,8 @@ const booksReducer = (state = initialState, action) => {
 const addBook = (book) => ({ type: ADD__BOOK, book });
 
 const removeBook = (book) => ({ type: REMOVE__BOOK, book });
+
+const editBook = (book) => ({ type: EDIT__BOOK, book });
 
 const dataFetch = (books) => ({ type: FETCHED__DATA, books });
 
@@ -65,7 +81,18 @@ const removeBooks = (book) => async (dispatch) => {
     .then(() => dispatch(removeBook(book)));
 };
 
+const editBooks = (book) => async (dispatch) => {
+  await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/hyR6UTGdJTnPM50BreqJ/books/', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(book),
+  })
+    .then(() => dispatch(editBook(book)));
+};
+
 export {
-  getBooks, addBooks, removeBooks,
+  getBooks, addBooks, removeBooks, editBooks,
 };
 export default booksReducer;
