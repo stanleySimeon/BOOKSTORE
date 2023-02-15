@@ -44,7 +44,7 @@ export default function Book({ book }) {
           <span className="bar"></span>
           <li><button className="btn remove" type="button" onClick={(event) => rmBook(event, book.item_id)}>Remove</button></li>
           <span className="bar"></span>
-          <li><button className="btn add" type="button">Edit</button></li>
+          <li><button type="button" className="editBtn" onClick={editBook}>Edit</button></li>
         </ul>
       </div>
       <div className="progress_container">
